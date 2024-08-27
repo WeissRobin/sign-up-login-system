@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --nav-icons: 1.6rem;
+  --welcome-text-main: 2.6rem;
+  --welcome-text-second: 1.6rem;
+  --text-md: 1.4rem;
+  --search-icon: 1.4rem;
+  --notification-icon: 2rem;
+  --client-number-stats: 3rem;
+  --client-text-stats: 1.4rem;
+  --section-heading: 2rem;
+  --table-heading: 1.4rem;
+  --table-text: 1.3rem;
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -35,25 +49,21 @@ ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 body {
   height: 100vh;
-  padding: 6em 6em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .dashboard-wrapper {
-  display: grid;
-  -moz-column-gap: 70px;
-       column-gap: 70px;
-  row-gap: 20px;
-  min-height: 100%;
-  grid-template-columns: 1fr 7fr 4fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "nav welcome user" "nav clients chart" "nav clients chart" "nav clients lol";
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-inline: 2em;
 }
 
 .navigation-wrapper {
@@ -65,32 +75,33 @@ body {
   flex-direction: column;
   height: 100%;
   background-color: black;
+  padding: 2em;
   border-radius: 10px;
 }
 .navigation h2 {
   color: white;
   font-weight: 800;
-  text-align: center;
   font-size: 5rem;
   padding-block: 1em;
+  display: none;
 }
 .navigation__list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 60px;
+  justify-content: center;
+  gap: 30px;
   flex: 1;
 }
 .navigation__icon {
-  font-size: 2.2rem;
+  font-size: var(--nav-icons);
   color: white;
 }
 .navigation__logout {
   text-align: center;
-  padding-block: 5em;
 }
 .navigation__logout a {
-  font-size: 2.2rem;
+  font-size: var(--nav-icons);
   color: white;
 }
 
@@ -100,13 +111,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 15px;
   grid-area: user;
 }
 .user-menu__item {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
+  width: 100%;
 }
 .user-menu__search {
   display: flex;
@@ -114,24 +126,24 @@ body {
   flex: 1;
   gap: 5px;
   background-color: #f5f5f7;
-  padding: 0.8em 1.7em;
+  padding: 2% 4%;
   border-radius: 10px;
 }
 .user-menu__search input {
   flex: 1;
   border: none;
   background-color: #f5f5f7;
-  font-size: 1.7rem;
+  font-size: var(--text-md);
   font-weight: 600;
 }
 .user-menu__search input:focus {
   outline: none;
 }
 .user-menu__search i {
-  font-size: 2rem;
+  font-size: var(--search-icon);
 }
 .user-menu__notification i {
-  font-size: 3rem;
+  font-size: var(--notification-icon);
 }
 .user-menu__profile {
   display: flex;
@@ -142,25 +154,23 @@ body {
   font-size: 1.1rem;
 }
 .user-menu__profile img {
-  max-width: 50px;
+  max-width: 40px;
   border-radius: 10px;
 }
 
 /* clients stats */
-.user-menu__item {
-  width: 100%;
-}
 .user-menu__item .clients-stats {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
   gap: 20px;
+  width: 100%;
 }
 .user-menu__item .clients-stats .number {
-  font-size: 6.5rem;
+  font-size: var(--client-number-stats);
   font-weight: 700;
 }
 .user-menu__item .clients-stats .client-text {
-  font-size: 1.8rem;
+  font-size: var(--client-text-stats);
   font-weight: 700;
 }
 .user-menu__item .clients-stats .stats {
@@ -168,9 +178,10 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  flex: 1;
+  flex: 1 1 0px;
+  max-width: 250px;
   background-color: #f5f5f7;
-  padding: 5px 40px;
+  padding-inline: 10%;
   border-radius: 10px;
 }
 
@@ -185,22 +196,22 @@ body {
 .welcome-banner__text {
   margin-block: auto;
   padding-left: 3em;
+  padding-block: 1em;
 }
 .welcome-banner__text .name {
-  font-size: 4.2rem;
+  font-size: var(--welcome-text-main);
   font-weight: 800;
 }
 .welcome-banner__text .welcome-message {
-  font-size: 2rem;
+  font-size: var(--welcome-text-second);
   font-weight: 600;
 }
-.welcome-banner__imgWrapper {
-  position: absolute;
-  bottom: -5px;
-  right: 10%;
-}
 .welcome-banner__imgWrapper img {
-  max-width: 270px;
+  max-width: 265px;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
 }
 
 /* Graph/Chart */
@@ -216,9 +227,9 @@ body {
 }
 .chart-wrapper .chart-stats .filter {
   background-color: #f5f5f7;
-  padding: 0.7em 1em;
   border-radius: 10px;
   cursor: pointer;
+  padding: 0.3em 0.7em;
 }
 .chart-wrapper .chart-stats .filter > *:not(i) {
   font-size: 1.5rem;
@@ -226,6 +237,10 @@ body {
 }
 .chart-wrapper .chart {
   flex: 1;
+  flex-basis: 300px;
+}
+.chart-wrapper .chart canvas {
+  height: 100%;
 }
 
 /* clients */
@@ -233,25 +248,24 @@ body {
   grid-area: clients;
 }
 .clients .clients-table {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  text-wrap: nowrap;
+  width: auto;
 }
 .clients__list {
-  overflow-y: auto;
   border-spacing: 0 20px;
-  width: 100%;
   max-height: 500px;
+  width: 100%;
 }
 .clients__list .clients-heading th {
   text-align: left;
-  font-size: 1.8rem;
+  font-size: var(--table-heading);
 }
 .clients__list .client-item td {
   text-align: left;
   background-color: #f5f5f7;
-  font-size: 1.4rem;
+  font-size: var(--table-text);
   font-weight: 500;
 }
 .clients__list .client-item td:first-child {
@@ -259,6 +273,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-block: 10px;
+  padding-inline: 10px;
   border-radius: 10px 0 0 10px;
 }
 .clients__list .client-item td:last-child {
@@ -268,19 +283,104 @@ body {
   background-color: black;
   border: none;
   color: white;
-  font-size: 1.6rem;
+  font-size: var(--text-md);
   font-weight: 600;
+  text-wrap: nowrap;
   border-radius: 10px;
   padding: 0.3em 0.6em;
   cursor: pointer;
 }
 .clients__list .client-item__image {
-  width: 50px;
+  width: 40px;
   border-radius: 10px;
 }
 
 .section-heading {
   flex: 1;
-  font-size: 3rem;
+  font-size: var(--section-heading);
   font-weight: 800;
+}
+
+@media (min-width: 610px) {
+  .user-menu {
+    flex-direction: row;
+  }
+}
+@media (min-width: 800px) {
+  :root {
+    --nav-icons: 2rem;
+    --welcome-text-main: 3rem;
+    --welcome-text-second: 2rem;
+    --text-md: 1.6rem;
+    --search-icon: 1.6rem;
+    --notification-icon: 3rem;
+    --client-number-stats: 5rem;
+    --client-text-stats: 1.7rem;
+    --section-heading: 2.8rem;
+    --table-heading: 1.7rem;
+    --table-text: 1.5rem;
+  }
+  .dashboard-wrapper {
+    display: grid;
+    grid-template-areas: "nav nav" "welcome user" "chart chart" "clients clients";
+    padding-inline: 5em;
+  }
+  .clients-table__list {
+    text-wrap: wrap;
+  }
+  .user-menu {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --nav-icons: 2.5rem;
+    --welcome-text-main: 4rem;
+    --welcome-text-second: 2.5rem;
+    --text-md: 1.8rem;
+    --search-icon: 2rem;
+    --notification-icon: 3rem;
+    --client-number-stats: 6rem;
+    --client-text-stats: 1.8rem;
+    --section-heading: 3rem;
+    --table-heading: 1.8rem;
+    --table-text: 1.5rem;
+  }
+  .welcome-banner__imgWrapper img {
+    display: block;
+  }
+  .content {
+    flex-direction: row;
+    width: 100%;
+    min-height: 100%;
+  }
+  .navigation__list {
+    flex-direction: column;
+  }
+  .navigation {
+    padding: 4em;
+  }
+  .dashboard-wrapper {
+    display: grid;
+    grid-template-areas: "welcome user" "clients chart" "clients chart" "clients lol";
+    grid-template-columns: 3fr 1fr;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding-inline: 0;
+    margin-left: 40px;
+    width: 100%;
+  }
+  body {
+    padding: 8em;
+  }
+  .chart-wrapper {
+    max-width: 500px;
+  }
+  .user-menu {
+    align-items: normal;
+  }
+  .user-menu__profile img {
+    max-width: 50px;
+  }
 }/*# sourceMappingURL=dashboard.css.map */

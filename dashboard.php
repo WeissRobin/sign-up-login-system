@@ -15,22 +15,21 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <div class='dashboard-wrapper'>
-        <div class='navigation-wrapper'>
-            <nav class='navigation'>
-                <h2>He.</h2>
-                <ul class='navigation__list'>
-                    <li class='navigation__icon'><i class="fa-solid fa-house"></i></li>
-                    <li class='navigation__icon'><i class="fa-solid fa-user"></i></li>
-                    <li class='navigation__icon'><i class="fa-solid fa-gear"></i></li>
-                    <li class='navigation__icon'><i class="fa-solid fa-envelope"></i></li>
-                    <li class='navigation__icon'><i class="fa-solid fa-chart-simple"></i></li>
-                </ul>
-                <div class='navigation__logout'>
-                    <a href="./includes/logout.inc.php"><i class="fa-solid fa-right-from-bracket"></i></a>
-                </div>
-            </nav>
-        </div>
+    <main class='content'>
+    <div class='navigation-wrapper'>
+        <nav class='navigation'>
+            <h2>He.</h2>
+            <ul class='navigation__list'>
+                <li class='navigation__icon'><i class="fa-solid fa-house"></i></li>
+                <li class='navigation__icon'><i class="fa-solid fa-user"></i></li>
+                <li class='navigation__icon'><i class="fa-solid fa-gear"></i></li>
+                <li class='navigation__icon'><i class="fa-solid fa-envelope"></i></li>
+                <li class='navigation__icon'><i class="fa-solid fa-chart-simple"></i></li>
+                <li class='navigation__icon'></li><a class='navigation__icon' href="./includes/logout.inc.php"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </ul>
+        </nav>
+    </div>
+    <div class='dashboard-wrapper'> 
         <div class='user-menu'>
             <div class='user-menu__item'>
                 <div class='user-menu__search'>
@@ -141,6 +140,7 @@
             </div>
         </div>
     </div>
+    </main>
 </body>
 <script src="./js/dashboard.js"></script>
 </html>

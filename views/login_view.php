@@ -31,7 +31,7 @@ function check_login_error() {
 }
 
 function is_logged() {
-    if($_SESSION["is_logged"] == true) {
+    if(isset($_SESSION["is_logged"]) == true) {
         header('Location: ./dashboard.php');
     }
 }
